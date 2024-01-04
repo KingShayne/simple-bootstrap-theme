@@ -22,5 +22,17 @@
 
     add_action("after_setup_theme","simple_boostrap_theme_nav_config");
 
-    add
+    function simple_boostrap_theme_add_li_class($classes, $item, $args){
+        $classes[] = "nav-item";
+        return $classes;
+    }
+
+    add_filter("nav_menu_css_class","simple_boostrap_theme_add_li_class", 1, 3 );
+
+    function simple_boostrap_theme_add_anchor_links($classes, $item, $args){
+        $classes['class'] = "nav-link";
+        return $classes;
+    }
+
+    add_filter("nav_menu_link_attributes","simple_boostrap_theme_add_anchor_links", 1, 3 );
 ?>
