@@ -6,7 +6,7 @@
         wp_enqueue_script("bootstrap",'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js', array('jquery'),'1.0', true );
         wp_enqueue_script('script', get_template_directory_uri() . '/assets/js/scripts.js', array(),'1.0', true );
 
-
+        
     }
 
     add_action("wp_enqueue_scripts","simple_bootstrap_theme_load_scripts");
@@ -18,6 +18,8 @@
             "primary_menu_id"=> "Primary Menu (Top Menu)",
             "secondart_menu_id"=> "Secondary Menu (Footer Menu)"
         ));
+
+        add_theme_support("post-thumbnails");
     }
 
     add_action("after_setup_theme","simple_boostrap_theme_nav_config");
@@ -35,4 +37,6 @@
     }
 
     add_filter("nav_menu_link_attributes","simple_boostrap_theme_add_anchor_links", 1, 3 );
+
+    
 ?>

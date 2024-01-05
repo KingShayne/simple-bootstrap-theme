@@ -9,8 +9,6 @@
             <?php
             if (have_posts()) {
                 while (have_posts()) {
-                    //$url = wp_get_attachment_url(get_post_thumbnail_id($post->ID), "thumbnail");
-                    //$url = wp_get_attachment_url(get_post_thumbnail_id(get_the_id()), "thumbnail");
                     the_post();
                     ?>
                     <div class="card mb-4">
