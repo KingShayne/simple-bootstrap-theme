@@ -67,7 +67,7 @@ function toggle_page_title($val)
     return $val;
 }
 
-add_action("woocommerce_after_shop_loop_item_title", "the_excerpt");
+//add_action("woocommerce_after_shop_loop_item_title", "the_excerpt");
 
 // Removing breadcrumbs 
 remove_action("woocommerce_before_main_content","woocommerce_breadcrumb", 20);
