@@ -1,7 +1,6 @@
 <?php
 
-//remove_action("woocommerce_sidebar", "woocommerce_get_sidebar", 10);
-
+remove_action("woocommerce_sidebar", "woocommerce_get_sidebar", 10);
 
 // <div class="container"><div class="row"></div></div>
 function open_container_row_div_classes()
@@ -40,7 +39,6 @@ function load_template_layout()
         {
             echo "</div>";
         }
-
 
         // <div class="col-sm-8"></div>
         add_action("woocommerce_before_main_content", "open_product_column_grid", 9);
