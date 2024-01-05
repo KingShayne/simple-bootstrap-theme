@@ -13,6 +13,15 @@
     </head>
     <body <?php body_class(); ?>>
         <!-- Responsive navbar-->
+        
+        <div class="container ">
+            <div class="row m-1">
+                <div class="col-md-3"><i class="fa fa-phone"></i> 0115456524</div>
+                <div class="col-md-3"><i class="fa fa-envelope"></i> admin@admin.com</div>
+                <div class="col-md-3"><?php get_search_form(); ?></div>
+                <div class="col-md-3"><i class="fa fa-facebook mx-2"></i>&nbsp;<i class="fa fa-twitter mx-2"></i>&nbsp;<i class="fa fa-instagram mx-2"></i>&nbsp;</div>
+            </div>
+        </div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" href="#!">Start Bootstrap</a>
@@ -25,6 +34,9 @@
                             "items_wrap" => '<ul class="navbar-nav ms-auto mb-2 mb-lg-0">%3$s</ul>'
                         ));
                     ?>
+                    <a href="<?php echo wc_get_cart_url(); ?>" class="btn btn-primary">
+                        <i class="fa fa-cart-shopping"></i> Cart (<span class="items-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>)
+                    </a>
                     <!-- <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">About</a></li>

@@ -5,7 +5,10 @@
     <div class="row">
         <!-- Blog entries-->
         <div class="col-lg-8">
-
+            <div id="products-new-arrivals">
+                <h3>New Arrivals</h3>
+                <?php echo do_shortcode('[products limit="4" columns="4" orderby="date" class="new-arrival-custom-class"]'); ?>
+            </div>
             <?php
             if (have_posts()) {
                 while (have_posts()) {
