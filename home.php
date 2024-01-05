@@ -5,7 +5,7 @@
     <div class="row">
         <!-- Blog entries-->
         <div class="col-lg-8">
-
+            <p>2</p>
             <?php
             if (have_posts()) {
                 while (have_posts()) {

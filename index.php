@@ -5,16 +5,13 @@
     <div class="row">
         <!-- Blog entries-->
         <div class="col-lg-8">
-            <div id="products-new-arrivals">
-                <h3>New Arrivals</h3>
-                <?php echo do_shortcode('[products limit="4" columns="4" orderby="date" class="new-arrival-custom-class"]'); ?>
-            </div>
+            
             <?php
             if (have_posts()) {
                 while (have_posts()) {
                     //$url = wp_get_attachment_url(get_post_thumbnail_id($post->ID), "thumbnail");
                     //$url = wp_get_attachment_url(get_post_thumbnail_id(get_the_id()), "thumbnail");
-                    the_post();
+                    //the_post();
                     ?>
                     <div class="card mb-4">
                         <a href="#!"><img class="card-img-top" src="https://dummyimage.com/850x350/dee2e6/6c757d.jpg"
@@ -30,9 +27,8 @@
                 <?php
                 }
             }
-            ?>
+            ?>           
             <!-- Featured blog post-->
-
         </div>
         <!-- Side widgets-->
         <div class="col-lg-4">

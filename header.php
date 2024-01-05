@@ -1,57 +1,97 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-    <head>
-        <meta charset="<?php echo bloginfo('charset');?>"  />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title><?php echo bloginfo('title'); ?></title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        
-        <?php wp_head(); ?>
-    </head>
-    <body <?php body_class(); ?>>
-        <!-- Responsive navbar-->
-        
-        <div class="container ">
+
+<head>
+    <meta charset="<?php echo bloginfo('charset'); ?>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>
+        <?php echo bloginfo('title'); ?>
+    </title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+    <?php wp_head(); ?>
+</head>
+
+<body <?php body_class(); ?>>
+    <!-- Responsive navbar-->
+
+    <div class="container-fluid bg-dark text-light py-1">
+        <div class="container">
             <div class="row m-1">
                 <div class="col-md-3"><i class="fa fa-phone"></i> 0115456524</div>
                 <div class="col-md-3"><i class="fa fa-envelope"></i> admin@admin.com</div>
-                <div class="col-md-3"><?php get_search_form(); ?></div>
-                <div class="col-md-3"><i class="fa fa-facebook mx-2"></i>&nbsp;<i class="fa fa-twitter mx-2"></i>&nbsp;<i class="fa fa-instagram mx-2"></i>&nbsp;</div>
+                <div class="col-md-3">
+                    <?php get_search_form(); ?>
+                </div>
+                <div class="col-md-3"><i class="fa fa-facebook mx-2"></i>&nbsp;<i class="fa fa-twitter mx-2"></i>&nbsp;<i
+                        class="fa fa-instagram mx-2"></i>&nbsp;</div>
             </div>
         </div>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand" href="#!">Start Bootstrap</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <?php 
-                        wp_nav_menu(array(
-                            "theme_location"=> "primary_menu_id",
-                            "container"=> false,
-                            "items_wrap" => '<ul class="navbar-nav ms-auto mb-2 mb-lg-0">%3$s</ul>'
-                        ));
-                    ?>
-                    <a href="<?php echo wc_get_cart_url(); ?>" class="btn btn-primary">
-                        <i class="fa fa-cart-shopping"></i> Cart (<span class="items-count"><?php echo WC()->cart->get_cart_contents_count(); ?></span>)
-                    </a>
-                    <!-- <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+        <div class="container">
+            <a class="navbar-brand" href="#!">Start Bootstrap</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <?php
+                wp_nav_menu(
+                    array(
+                        "theme_location" => "primary_menu_id",
+                        "container" => false,
+                        "items_wrap" => '<ul class="navbar-nav ms-auto mb-2 mb-lg-0">%3$s</ul>'
+                    )
+                );
+                ?>
+                <a href="<?php echo wc_get_cart_url(); ?>" class="btn btn-primary">
+                    <i class="fa fa-cart-shopping"></i> Cart (<span class="items-count">
+                        <?php echo WC()->cart->get_cart_contents_count(); ?>
+                    </span>)
+                </a>
+                <!-- <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">Contact</a></li>
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Blog</a></li> -->
-                    </ul>
-                </div>
+                </ul>
             </div>
-        </nav>
-        <!-- Page header with logo and tagline-->
-        <header class="py-5 bg-light border-bottom mb-4">
+        </div>
+    </nav>
+    <!-- Page header with logo and tagline-->
+    <!-- <header class="py-5 bg-light border-bottom mb-4">
             <div class="container">
                 <div class="text-center my-5">
                     <h1 class="fw-bolder">Welcome to Blog Home!</h1>
                     <p class="lead mb-0">A Bootstrap 5 starter layout for your next blog homepage</p>
                 </div>
             </div>
-        </header>
+        </header> -->
+    <header>
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://via.placeholder.com/1519x500.png" class="d-block w-100" alt="image_1">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/1519x500.png" class="d-block w-100" alt="image_2">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/1519x500.png" class="d-block w-100" alt="image_3">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </header>
