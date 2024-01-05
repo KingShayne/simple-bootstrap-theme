@@ -20,9 +20,10 @@ defined( 'ABSPATH' ) || exit;
 get_header( 'shop' );
 ?>
 
-<div class="container">
+<!-- Adding bootstrap containers in HTML -->
+<!-- <div class="container">
     <div class="row">
-        <div class="col-sm-8">
+        <div class="col-sm-8"> -->
             <?php 
                 /**
                  * Hook: woocommerce_before_main_content.
@@ -100,8 +101,8 @@ get_header( 'shop' );
                  */
                 do_action( 'woocommerce_after_main_content' );
             ?>
-        </div>
-        <div class="col-sm-4">
+        <!-- </div>
+        <div class="col-sm-4"> -->
                 <?php 
 
                 /**
@@ -111,9 +112,9 @@ get_header( 'shop' );
                  */
                 do_action( 'woocommerce_sidebar' );
                 ?>
-        </div>
+        <!-- </div>
     </div>
-</div>
+</div> -->
 
 <?php
 
