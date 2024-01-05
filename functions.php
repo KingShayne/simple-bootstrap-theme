@@ -8,7 +8,6 @@ function simple_bootstrap_theme_load_scripts()
     wp_enqueue_script("bootstrap-js", 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js', array('jquery'), '1.0', true);
     wp_enqueue_script('script', get_template_directory_uri() . '/assets/js/scripts.js', array(), '1.0', true);
 
-
 }
 
 add_action("wp_enqueue_scripts", "simple_bootstrap_theme_load_scripts");
@@ -56,66 +55,7 @@ function simple_boostrap_theme_add_anchor_links($classes, $item, $args)
 
 add_filter("nav_menu_link_attributes", "simple_boostrap_theme_add_anchor_links", 1, 3);
 
-//remove_action("woocommerce_sidebar", "woocommerce_get_sidebar", 10);
 
+include_once 'includes/wc-modifications.php';
 
-// <div class="container"><div class="row"></div></div>
-function open_container_row_div_classes()
-{
-    echo "<div class='container'><div class='row'>";
-}
-
-add_action("woocommerce_before_main_content", "open_container_row_div_classes", 5);
-
-function close_container_row_div_classes()
-{
-    echo "</div></div>";
-}
-
-
-
-
-
-add_action("template_redirect", "load_template_layout");
-
-function load_template_layout()
-{
-    // If its shop page
-    if (is_shop()) {
-
-        // <div class="col-sm-4"></div>
-
-        add_action("woocommerce_after_main_content", "close_container_row_div_classes", 5);
-
-        add_action("woocommerce_before_main_content", "open_sidebar_column_grid", 6);   
-        function open_sidebar_column_grid()
-        {
-            echo "<div class='col-sm-4'>";
-        }
-
-        add_action("woocommerce_before_main_content", "woocommerce_get_sidebar", 6);
-
-        add_action("woocommerce_before_main_content", "close_sidebar_column_grid", 6);
-
-        function close_sidebar_column_grid()
-        {
-            echo "</div>";
-        }
-
-        // <div class="col-sm-8"></div>
-        add_action("woocommerce_before_main_content", "open_product_column_grid", 9);
-
-        function open_product_column_grid()
-        {
-            echo "<div class='col-sm-8'>";
-        }
-
-        add_action("woocommerce_before_main_content", "close_product_column_grid", 10);
-
-        function close_product_column_grid()
-        {
-            echo "</div>";
-        }
-    }
-}
 ?>
