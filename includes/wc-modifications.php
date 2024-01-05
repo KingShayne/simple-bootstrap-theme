@@ -22,7 +22,6 @@ function load_template_layout()
 {
     // If its shop page
     if (is_shop()) {
-
         // <div class="col-sm-4"></div>
 
         add_action("woocommerce_after_main_content", "close_container_row_div_classes", 5);
@@ -41,6 +40,7 @@ function load_template_layout()
         {
             echo "</div>";
         }
+
 
         // <div class="col-sm-8"></div>
         add_action("woocommerce_before_main_content", "open_product_column_grid", 9);

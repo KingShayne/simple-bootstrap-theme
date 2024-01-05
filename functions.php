@@ -3,7 +3,9 @@ function simple_bootstrap_theme_load_scripts()
 {
 
     wp_enqueue_style("bootstrap-css", "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css", array(), "1.0", 'all');
+    wp_enqueue_style("font-awesome", "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css", array(), "1.0", 'all');
     wp_enqueue_style("styles", get_template_directory_uri() . "/assets/css/styles.css", array(), "1.0", 'all');
+    wp_enqueue_style("style", get_template_directory_uri() . "/assets/css/style.css", array(), "1.0", 'all');
 
     wp_enqueue_script("bootstrap-js", 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js', array('jquery'), '1.0', true);
     wp_enqueue_script('script', get_template_directory_uri() . '/assets/js/scripts.js', array(), '1.0', true);
@@ -55,7 +57,9 @@ function simple_boostrap_theme_add_anchor_links($classes, $item, $args)
 
 add_filter("nav_menu_link_attributes", "simple_boostrap_theme_add_anchor_links", 1, 3);
 
+if(class_exists("Woocommerce")){
+    include_once 'includes/wc-modifications.php';
+}
 
-include_once 'includes/wc-modifications.php';
 
 ?>

@@ -13,3 +13,37 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: simplebootstraptheme
 Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready, wide-blocks, block-styles, style-variations, accessibility-ready, blog, portfolio, news
 */
+
+.woocommerce div.product form.cart .button {
+    vertical-align: middle;
+    float: left;
+    background: black;
+}
+
+.woocommerce ul.products li.product .button {
+    display: inline-block;
+    margin-top: 1em;
+    background: black;
+    color: white;
+}
+
+.woocommerce ul.products li.product a {
+    text-decoration: none;
+    text-align: center;
+}
+
+.woocommerce ul.products li.product .onsale {
+    top: 18px;
+    right: auto;
+    left: 11px;
+    margin: -.5em -.5em 0 0;
+    background: red;
+    border-radius: 40%;
+    min-width: 15px;
+    min-height: 30px;
+}
+
+.woocommerce ul.products.columns-3 li.product,.woocommerce-page ul.products.columns-3 li.product {
+    width: 30.75%;
+    text-align: center;
+}
