@@ -64,20 +64,32 @@
                 );
                 ?>
 
-                <?php if(is_user_logged_in()) : ?>
+
+                <!-- Check if woocommerce plugin in activated. -->
+                <?php if(class_exists('Woocommerce')) : ?>
                     
-                    <a href="<?php echo get_permalink(get_option("woocommerce_myaccount_page_id")) ; ?>" class="myaccount-link">
-                        My Account
-                    </a
+                    <!-- Show My Account page if user is logged in -->
+                    <?php if(is_user_logged_in()) : ?>
+                        
+                        <a href="<?php echo get_permalink(get_option("woocommerce_myaccount_page_id")) ; ?>" class="myaccount-link">
+                            My Account
+                        </a>&nbsp;
+
+                        <!-- <a href="<?php echo wp_logout_url(); ?>" class="myaccount-link">
+                            Logout
+                        </a>&nbsp; -->
+                    
+                    <?php else : ?> 
+                        
+                        <!-- Show Login & Register if user is not logged in. -->
+                        <a href="<?php echo get_permalink(get_option("woocommerce_myaccount_page_id")) ; ?>" class="myaccount-link">
+                            Login / Register
+                        </a>&nbsp;
+
+                    <?php endif;  ?>
+
+                <?php endif ; ?>
                 
-                <?php else : ?> 
-
-                    <a href="<?php echo get_permalink(get_option("woocommerce_myaccount_page_id")) ; ?>">
-                        ogin / Register
-                    </a>
-
-                <?php endif;  ?>
-                &nbsp;
 
                 <div class="cart-info">
                     <a href="<?php echo wc_get_cart_url(); ?>" class="cart-subtotal">
