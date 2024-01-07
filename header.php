@@ -18,22 +18,38 @@
 <body <?php body_class(); ?>>
     <!-- Responsive navbar-->
 
-    <div class="container-fluid bg-dark text-light py-1">
+    <div class="container-fluid bg-dark text-light py-1 announcement-bar">
         <div class="container">
             <div class="row m-1">
-                <div class="col-md-3"><i class="fa fa-phone"></i> 0115456524</div>
-                <div class="col-md-3"><i class="fa fa-envelope"></i> admin@admin.com</div>
-                <div class="col-md-3">
+                <div class="col">
+                    <i class="fa fa-phone"></i> 0115456524
+                </div>
+                <div class="col">
+                    <i class="fa fa-envelope"></i> admin@admin.com
+                </div>
+                <div class="col">
                     <?php get_search_form(); ?>
                 </div>
-                <div class="col-md-3"><i class="fa fa-facebook mx-2"></i>&nbsp;<i class="fa fa-twitter mx-2"></i>&nbsp;<i
-                        class="fa fa-instagram mx-2"></i>&nbsp;</div>
+                <div class="col">
+                    <i class="fa fa-facebook mx-2"></i>&nbsp;
+                    <i class="fa fa-twitter mx-2"></i>&nbsp;
+                    <i class="fa fa-instagram mx-2"></i>&nbsp;
+                </div>
             </div>
         </div>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#!">Start Bootstrap</a>
+            <a class="navbar-brand" href="#">
+                <?php if(has_custom_logo()) {
+                    the_custom_logo() ;
+                }
+                else {
+                    echo bloginfo('title') ;
+                 } ?>
+                
+                <!-- Bootstraps -->
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -47,11 +63,32 @@
                     )
                 );
                 ?>
-                <a href="<?php echo wc_get_cart_url(); ?>" class="btn btn-primary">
-                    <i class="fa fa-cart-shopping"></i> Cart (<span class="items-count">
-                        <?php echo WC()->cart->get_cart_contents_count(); ?>
-                    </span>)
-                </a>
+
+                <?php if(is_user_logged_in()) : ?>
+                    
+                    <a href="<?php echo get_permalink(get_option("woocommerce_myaccount_page_id")) ; ?>" class="myaccount-link">
+                        My Account
+                    </a
+                
+                <?php else : ?> 
+
+                    <a href="<?php echo get_permalink(get_option("woocommerce_myaccount_page_id")) ; ?>">
+                        ogin / Register
+                    </a>
+
+                <?php endif;  ?>
+                &nbsp;
+
+                <div class="cart-info">
+                    <a href="<?php echo wc_get_cart_url(); ?>" class="cart-subtotal">
+                        <?php echo WC()->cart->get_total(); ?>
+                    </a>
+                    <a href="<?php echo wc_get_cart_url(); ?>" class="fa fa-shopping-cart fa-2x">
+                        <span class="items-count">
+                            <?php echo WC()->cart->get_cart_contents_count(); ?>
+                        </span>
+                    </a>
+                </div>
                 <!-- <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
@@ -71,9 +108,24 @@
             </div>
         </header> -->
     <header>
-        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide carousel-fade">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-label="Slide 1" aria-current="true"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2" class=""></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3" class=""></button>
+            </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
+                    <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="1519" height="500"
+                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide"
+                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="#CCC"></rect><text x="50%" y="50%" fill="#555"
+                            dy=".3em">First slide</text>
+                    </svg> -->
                     <img src="https://via.placeholder.com/1519x500.png" class="d-block w-100" alt="image_1">
                 </div>
                 <div class="carousel-item">
@@ -83,12 +135,12 @@
                     <img src="https://via.placeholder.com/1519x500.png" class="d-block w-100" alt="image_3">
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                 data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
                 data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>

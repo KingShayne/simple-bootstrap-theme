@@ -15,14 +15,10 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 */
 
 .woocommerce div.product form.cart .button {
-    vertical-align: middle;
-    float: left;
     background: black;
 }
 
 .woocommerce ul.products li.product .button {
-    display: inline-block;
-    margin-top: 1em;
     background: black;
     color: white;
 }
@@ -43,7 +39,65 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
     min-height: 30px;
 }
 
-.woocommerce ul.products.columns-3 li.product,.woocommerce-page ul.products.columns-3 li.product {
-    width: 30.75%;
+.woocommerce ul.products li.product,.woocommerce-page ul.products li.product {
     text-align: center;
+}
+
+.fa-2x {
+    font-size: 25px;
+}
+
+a.fa.fa-shopping-cart.fa-2x {
+    text-decoration: none;
+    color: darkgrey;
+}
+
+a.cart-subtotal {
+    text-decoration: none;
+    color: darkgrey;
+}
+
+a.cart-subtotal:hover {
+    text-decoration: none;
+    color: #d9534f;
+}
+
+span.items-count {
+    background: #d9534f;
+    color: whitesmoke;
+    border-radius: 50%;
+    font-size: 14px;
+    padding: 1px 5px;
+    position: relative;
+    top: -16px;
+    right: 15px;
+}
+
+.widget_nav_menu ul.menu {
+    padding: 0;
+}
+
+li.nav-item {
+    list-style: none;
+}
+
+.widget_block p a {
+    color: white;
+    text-decoration: none;
+}
+
+.widget_block a:hover {
+    color: #d9534f;
+}
+
+li.nav-item a:hover{
+    color: #d9534f;
+}
+
+a.myaccount-link {
+    text-decoration: none;
+    color: darkgrey;
+}
+a.myaccount-link:hover {
+    color: #d9534f;
 }

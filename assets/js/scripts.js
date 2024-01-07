@@ -5,3 +5,10 @@
 */
 // This file is intentionally blank
 // Use this file to add JavaScript to your project
+
+const myCarouselElement = document.querySelector('#myCarousel')
+
+const carousel = new bootstrap.Carousel(myCarouselElement, {
+  interval: 2000,
+  touch: false
+})
